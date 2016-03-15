@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/mystyles.css" />
+</head>
+<body ng-controller="purchaseController">
+
+<h1>Введите ваши данные</h1>
+<div class="new_info">
+    <div class="new_info_item">
+        <label for="firstName">Введите имя</label>
+        <input id="firstName" ng-model="firstName" type="text"/>
+    </div>
+    <div class="new_info_item">
+        <label for="age">Введите Ваш возраст</label>
+        <input id="age" ng-model="wage" type="text"/>
+    </div>
+    <div class="new_info_item">
+        <label for="itemOrg">Введите место работы</label>
+        <input id="itemOrg" ng-model="itemOrg" type="text"/>
+    </div>
+    <button class="btn_1" ng-click="addItem(firstName, wage, itemOrg)">Добавить</button>
+</div>
+<h1>Сортировать</h1>
+<div class="sort_title">
+    <button id="elemAge" class="sort_title_title">Возраст</button>
+    <button id="elemOrg" class="sort_title_title">Имя</button>
+    <button id="elemAll" class="sort_title_title">Показать все</button>
+</div>
+<h1>Зарегистрированные пользователи</h1>
+<div class="all_info_wrap">
+    <div class="all_info" ng-repeat="item in list.items">
+        <div class="new_info_item info_name">
+            <div class="info_title">Имя</div>
+            <div class="info_added">{{item.pushName | lowercase}}</div>
+        </div>
+        <div class="new_info_item info_age">
+            <div class="info_title">Возраст</div>
+            <div class="info_added">{{item.pushAge}}</div>
+        </div>
+        <div class="new_info_item info_org">
+            <div class="info_title">Место работы</div>
+            <div class="info_added">{{item.pushOrg | lowercase}}</div>
+        </div>
+    </div>
+</div>
+<div>
+    <!--<pre>{{item.pushName}}</pre>-->
+</div>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/controllers/app.js"></script>
+<script src="js/controllers/filter.js"></script>
+
+<!--<script src="js/dataServis.js"></script>-->
+<!--<script src="js/controllers/phonesController.js"></script>-->
+<!--<script src="js/controllers/AnswerController.js"></script>-->
+<!--<script src="js/controllers/filter.js"></script>-->
+</body>
+</html>
