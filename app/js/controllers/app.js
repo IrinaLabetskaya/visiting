@@ -21,17 +21,30 @@ myApp.controller("purchaseController", function ($scope) {
         }
 
     };
-    //click filter
-//    $scope.sortItem = function (firstName, wage, itemOrg ) {
-//         if(firstName != "" && itemOrg != "" && !isNaN(wage)) // если текст установлен и введено число, то добавляем
-//        {
-//            $scope.list.items.push({ pushName: firstName, pushAge: wage, pushOrg: itemOrg});
-//        }
-//
-//    };
 
+
+//    var retrievedData = localStorage.getItem("newLS");
+//    var movies2 = JSON.parse(newLS);
 
 });
+//
+//var model = [
+//    {
+//        pushName: "Илья",
+//        pushAge: 1,
+//        pushOrg: "First"
+//    },
+//    {
+//        pushName: "Ron",
+//        pushAge: 15,
+//        pushOrg: "Second"
+//    },
+//    {
+//        pushName: "Michail",
+//        pushAge: 2,
+//        pushOrg: "Last"
+//    }
+//];
 
 var model = {
     items: [
@@ -41,10 +54,10 @@ var model = {
     ]
 };
 
-
 var obgJson = JSON.stringify( model );
 localStorage.setItem("newLS", obgJson);
-console.log(localStorage);
+
+
 
 
 

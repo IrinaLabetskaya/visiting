@@ -1,34 +1,28 @@
 $(function () {
 
-    var sortWrap = $('.all_info_wrap');
-    $('#elemAge').on('click', function(){
-        sortWrap.find('.new_info_item').hide();
-        sortWrap.find('.info_age').show();
-    });
-    $('#elemOrg').on('click', function(){
-        sortWrap.find('.new_info_item').hide();
-        sortWrap.find('.info_name').show();
-    });
+    function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a < b) return -1;
+    }
 
-    $('#elemAll').on('click', function(){
-        sortWrap.find('.new_info_item').show();
-    });
+    function addSort() {
+        var retrievedData = localStorage.getItem("newLS");
+        var storage = JSON.parse(retrievedData);
+        var myArray = storage.items;
+        console.log(storage);
 
-
-
-    $('.btn_1').on('click', function(){
-        var lengthAgeSelf = $('.all_info').first();
-        var lengthAge = lengthAgeSelf.find('.info_age');
-        var lengthName = lengthAgeSelf.find('.info_name');
-        console.log(lengthAgeSelf);
-        if(lengthAge.is(":hidden")  && lengthName.is(":visible")){
-            sortWrap.find('.new_info_item').hide();
-            sortWrap.find('.info_name').show();
+        var ageArray = [];
+        for (i = 0; i < myArray.length; i++) {
+            ageArray.push(myArray[i].pushAge);
         }
-        else if(lengthAge.is(":visible")  && lengthName.is(":hidden")){
-            sortWrap.find('.new_info_item').hide();
-            sortWrap.find('.info_age').show();
-        }
+        console.log(ageArray.sort(compareNumeric));
+    }
+
+
+    $('#elemAge').on('click', function () {
+        addSort();
     });
+
 
 });
+
