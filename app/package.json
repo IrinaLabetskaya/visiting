@@ -1,0 +1,13 @@
+{
+  "name": "visitis",
+  "private": true,
+  "version": "0.0.0",
+  "description": "best project evet",
+  "license": "custom",
+  "devDependencies": {
+    "bower": "~1.7"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
