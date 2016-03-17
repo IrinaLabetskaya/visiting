@@ -2,6 +2,9 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller("purchaseController", function ($scope) {
 
+    $scope.sortType     = 'pushAge'; // значение сортировки по умолчанию
+    $scope.sortReverse  = false;  // обратная сортировка
+
     $scope.items = model;
     $scope.addItem = function (firstName, wage, itemOrg ) {
         wage = parseFloat(wage); // преобразуем введенное значение к числу

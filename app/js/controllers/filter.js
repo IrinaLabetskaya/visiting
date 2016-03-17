@@ -21,7 +21,7 @@ $(function () {
 
 
     $('#elemAge').on('click', function () {
-        addSort();
+//        addSort();
     });
 
 });

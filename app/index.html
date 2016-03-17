@@ -20,17 +20,21 @@
         <label for="itemOrg">Введите место работы</label>
         <input id="itemOrg" ng-model="itemOrg" type="text"/>
     </div>
+    <div>
+        <!--<button class="btn_1" ng-click="addItem(firstName, wage, itemOrg)">Добавить поле</button>-->
+    </div>
     <button class="btn_1" ng-click="addItem(firstName, wage, itemOrg)">Добавить</button>
+
 </div>
 <h1>Сортировать</h1>
 <div class="sort_title">
-    <button id="elemAge" class="sort_title_title">Возраст</button>
-    <button id="elemOrg" class="sort_title_title">Имя</button>
-    <button id="elemAll" class="sort_title_title">Показать все</button>
+    <button id="elemAge"  ng-click="sortType = 'pushAge'; sortReverse = !sortReverse" class="sort_title_title">Возраст</button>
+    <button id="elemOrg"  ng-click="sortType = 'pushName'; sortReverse = !sortReverse"  class="sort_title_title">Имя</button>
+    <button id="elemAll"  ng-click="sortType = 'pushOrg'; sortReverse = !sortReverse" class="sort_title_title">Место работы</button>
 </div>
 <h1>Зарегистрированные пользователи</h1>
 <div class="all_info_wrap">
-    <div class="all_info" ng-repeat="item in items">
+    <div class="all_info" ng-repeat="item in items | orderBy:sortType:sortReverse">
         <div class="new_info_item info_name">
             <div class="info_title">Имя</div>
             <div class="info_added">{{item.pushName | lowercase}}</div>
@@ -42,6 +46,10 @@
         <div class="new_info_item info_org">
             <div class="info_title">Место работы</div>
             <div class="info_added">{{item.pushOrg | lowercase}}</div>
+        </div>
+        <div class="new_info_item info_org">
+            <!--<div class="info_title">Note</div>-->
+            <div class="info_added">{{item.pushNote | lowercase}}</div>
         </div>
     </div>
 </div>
