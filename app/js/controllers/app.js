@@ -22,10 +22,6 @@ myApp.controller("purchaseController", function ($scope) {
 
     };
 
-
-//    var retrievedData = localStorage.getItem("newLS");
-//    var movies2 = JSON.parse(newLS);
-
 });
 //
 //var model = [
@@ -48,8 +44,8 @@ myApp.controller("purchaseController", function ($scope) {
 
 var model = {
     items: [
-        { pushName: "Илья", pushAge: 22 ,pushOrg: "First"},
         { pushName: "Ron", pushAge: 28 ,pushOrg: "Second"},
+        { pushName: "Илья", pushAge: 22 ,pushOrg: "First"},
         { pushName: "Michail", pushAge: 25 ,pushOrg: "Last"}
     ]
 };
