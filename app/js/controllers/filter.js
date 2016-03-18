@@ -19,7 +19,6 @@ $(function () {
         console.log(storage.sort(compareNumeric));
     }
 
-
     $('#elemAge').on('click', function () {
 //        addSort();
     });
