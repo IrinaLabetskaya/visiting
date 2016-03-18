@@ -8,10 +8,10 @@ myApp.controller("purchaseController", function ($scope) {
         $scope.halue.push('');
         console.log($scope.halue);
     };
-    $scope.addItem = function (firstName, firstTime, wage, itemOrg, halue ) {
+    $scope.addItem = function (firstData, firstName, firstTime, wage, itemOrg, halue ) {
         wage = parseFloat(wage); // преобразуем введенное значение к числу
         if(firstName != "" && itemOrg != "" && !isNaN(wage)){ // если текст установлен и введено число, то добавляем
-            $scope.items.push({ pushName: firstName, pushTime: firstTime, pushAge: wage, pushOrg: itemOrg, pushNote: halue});
+            $scope.items.push({pushData: firstData, pushName: firstName, pushTime: firstTime, pushAge: wage, pushOrg: itemOrg, pushNote: halue});
             var obgJsonNew = JSON.stringify(boxs);
             localStorage.setItem("newLS", obgJsonNew);
         } else{
@@ -22,6 +22,7 @@ myApp.controller("purchaseController", function ($scope) {
 
 var boxs =  [
         {
+            pushData: "18/18/15",
             pushName: "Ron",
             pushTime: "10:00",
             pushAge: 28,
@@ -29,13 +30,16 @@ var boxs =  [
             pushNote: ""
         },
         {
+            pushData: "18/18/15",
             pushName: "Илья",
             pushTime: "10:45",
             pushAge: 22,
             pushOrg: "First",
             pushNote: ""
         },
-        {   pushName: "Michail",
+        {
+            pushData: "18/18/15",
+            pushName: "Michail",
             pushTime: "12:00",
             pushAge: 25,
             pushOrg: "Last",

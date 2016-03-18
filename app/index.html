@@ -3,11 +3,17 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/mystyles.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="css/jquery-ui.theme.css" />
 </head>
 <body ng-controller="purchaseController">
 
 <h1>Введите ваши данные</h1>
 <div class="new_info">
+    <div class="calendar">
+        Date: <input type="text" id="datepicker" ng-model="firstData">
+    </div>
     <div class="new_info_item">
         <label for="firstName">Введите имя</label>
         <input id="firstName" ng-model="firstName" type="text"/>
@@ -32,7 +38,7 @@
         <button class="btn_1" ng-click="addField()">+ поле</button>
     </div>
 
-    <button class="btn_1" ng-click="addItem(firstName, firstTime, wage, itemOrg, halue)">Добавить</button>
+    <button class="btn_1" ng-click="addItem(firstData, firstName, firstTime, wage, itemOrg, halue)">Добавить</button>
 </div>
 <h1>Сортировать</h1>
 <div class="sort_title">
@@ -43,6 +49,10 @@
 <h1>Зарегистрированные пользователи </h1>
 <div class="all_info_wrap">
     <div class="all_info" ng-repeat="item in items | orderBy:sortType:sortReverse">
+        <div class="new_info_item info_name">
+            <div class="info_title">Дата</div>
+            <div class="info_added">{{item.pushData}}</div>
+        </div>
         <div class="new_info_item info_name">
             <div class="info_title">Имя</div>
             <div class="info_added">{{item.pushName | lowercase}}</div>
@@ -71,8 +81,10 @@
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/lib/angular/angular.min.js"></script>
+<script src="js/lib/jquery-ui.min.js"></script>
 <script src="js/controllers/app.js"></script>
-<!--<script src="js/controllers/filter.js"></script>-->
+<script src="js/controllers/filter.js"></script>
+<script src="js/controllers/main.js"></script>
 
 </body>
 </html>

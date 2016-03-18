@@ -34,8 +34,10 @@ h1{
     font-size: 16px;
     display: inline-block;
     vertical-align: top;
-    width: 15%;
+    width: 25%;
     margin-right: 5%;
+    margin-bottom: 15px;
+    /*border: 1px solid #ccc;*/
 }
 label{
     display: block;
@@ -55,6 +57,7 @@ input{
 .all_info{
     font-size: 0;
     margin: 30px 0;
+    border-bottom: 4px solid #ccc;
 }
 .info_title{
     color: #666;
@@ -76,4 +79,17 @@ input{
     text-transform: uppercase;
     color: #999;
     text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+.calendar img{
+    width: 30px;
+    height:30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.calendar input{
+    width: 200px;
+}
+.calendar{
+    font-size: 16px;
+    padding-bottom: 20px;
 }
